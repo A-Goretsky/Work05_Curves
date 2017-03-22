@@ -77,11 +77,11 @@ void add_curve( struct matrix *points,
 	double x_ne;
 	double y_ne;
 
-	for (double t = step; t < 1; t += step) {
+	for (double t = step; t < 1.01; t += step) {
 		x_ne = calc(xcoefs, t);
 		y_ne = calc(ycoefs, t);
 
-		add_edge(points, x_or, y_or, 0, x_ne, x_ne, 0);
+		add_edge(points, x_or, y_or, 0, x_ne, y_ne, 0);
 
 		x_or = x_ne;
 		y_or = y_ne;

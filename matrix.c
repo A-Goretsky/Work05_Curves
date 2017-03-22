@@ -98,12 +98,14 @@ struct matrix * generate_curve_coefs( double p1, double p2,
     coefs->m[3][0] = p4;
 
     struct matrix *curve;
+    //curve = new_matrix(4,4);
+    //ident(curve);
 
     if (type == HERMITE) {
-        curve = make_hermite;
+        curve = make_hermite();
     }
     else {
-        curve = make_bezier;
+        curve = make_bezier();
     }
 
     matrix_mult(curve, coefs);
